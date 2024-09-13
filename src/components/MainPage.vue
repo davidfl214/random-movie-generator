@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, nextTick } from "vue";
 import { Star, Loader2 } from "lucide-vue-next";
 
 const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -13,6 +13,7 @@ const error = ref(null);
 const movieData = ref(null);
 const minYear = ref(1900);
 const maxYear = ref(new Date().getFullYear());
+const movieInfo = ref(null);
 
 onMounted(async () => {
   error.value = null;
@@ -57,6 +58,9 @@ const handleSearch = async () => {
     const filmData = await films.json();
     movieData.value =
       filmData.results[Math.floor(Math.random() * filmData.results.length)];
+    await nextTick();
+    if (movieInfo.value)
+      movieInfo.value.scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (err) {
     error.value =
       "Error obteniendo la información de la película. Inténtelo de nuevo más tarde";
@@ -84,7 +88,7 @@ const selectStarClick = (star) => {
     class="min-h-screen bg-gradient-to-br from-teal-400 to-blue-500 py-12 px-4 sm:px-6 lg:px-8"
   >
     <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-extrabold text-white text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-white text-center mb-12 uppercase">
         Generador automático de películas
       </h1>
 
@@ -170,6 +174,7 @@ const selectStarClick = (star) => {
       <div
         v-if="movieData"
         class="mt-12 bg-white rounded-lg shadow-xl overflow-hidden"
+        ref="movieInfo"
       >
         <div class="md:flex">
           <div class="md:w-2/5">
