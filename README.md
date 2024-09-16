@@ -1,83 +1,88 @@
-# Generador Automático de Películas
+# Random Movie Generator
 
-## Descripción
-El Generador Automático de Películas es una aplicación web desarrollada con Vue.js que permite a los usuarios descubrir películas de forma aleatoria basándose en criterios como género, puntuación mínima y rango de años donde fue estrernada la película. La aplicación utiliza la API de The Movie Database (TMDB) para obtener información sobre películas y géneros.
+## Description
 
-## Características
-- Selección de género de película, basadas en las que provee TMDB en su API
-- Filtro de puntuación mínima (1-5 estrellas)
-- Selección de rango de años para las películas
-- Búsqueda aleatoria de películas basada en los criterios seleccionados
-- Visualización de detalles de la película incluyendo póster, título, sinopsis, fecha de estreno y puntuación
+The random movie generator is a web application developed using Vue.js that allows users to discover random films, based on some criteria like genre, minimum rating and relase date range. The application uses The Movie Database (TMDB) API for retrieving film information.
 
-## Tecnologías Utilizadas
+## Features
+
+- Film genre selection, based on the ones that TMDB API provides
+- Minimum rating filter (1-5 stars)
+- Relase date range selection
+- Random movie search based on that criteria
+- Film details visualization like title, description, relase date, poster and rating
+
+## Technology stack
+
 - Vue.js 3 (Composition API)
 - Vite (build tool)
-- Tailwind CSS (estilos)
-- Lucide Vue Next (iconos)
+- Tailwind CSS (styles)
+- Lucide Vue Next (icons)
 - TMDB API
 
-## Requisitos Previos
-- Node.js (versión 14 o superior)
-- NPM o Yarn
-- Una clave de API de TMDB
+## Requirements
 
-## Instalación
+- Node.js (version 14 or higher)
+- NPM or Yarn
+- TMDB API key
 
-1. Clona este repositorio:
+## Installation
+
+1. Clone this repository:
    ```
    git clone https://github.com/davidfl214/random-movie-generator
    ```
 
-2. Navega al directorio del proyecto:
+2. Go to the repository folder:
    ```
    cd random-movie-generator
    ```
 
-3. Instala las dependencias:
+3. Install dependencies:
    ```
    npm install
    ```
-   o si usas Yarn:
+   or if you use yarn:
    ```
    yarn install
    ```
 
-4. Crea un archivo `.env` en la raíz del proyecto y añade tu clave de API de TMDB:
+4. Create an `.env` file in the root directory and add your TMDB API key:
    ```
-   VITE_TMDB_API_KEY=tu_clave_api_aqui
+   VITE_TMDB_API_KEY=your_key_here
    ```
 
-## Uso
+## Usage
 
-1. Inicia el servidor de desarrollo:
+1. Start the development server:
    ```
    npm run dev
    ```
-   o con Yarn:
+   or with Yarn:
    ```
    yarn dev
    ```
 
-2. Abre tu navegador y visita `http://localhost:5173` (o el puerto que Vite te indique).
+2. Open your browser and visit `http://localhost:5173` (or the port that Vite shows you).
 
-3. Usa la interfaz para seleccionar tus criterios de búsqueda y haz clic en "Buscar película" para obtener una recomendación aleatoria.
+3. Use the interface to select your search criteria and click "Search movie" to get a random recommendation.
 
-## Construcción para Producción
+## Production build
 
-Para construir la aplicación para producción, ejecuta:
+For build production, execute:
 
 ```
 npm run build
 ```
-o con Yarn:
+or with Yarn: 
 ```
 yarn build
 ```
 
-Esto generará una versión optimizada de la aplicación en el directorio `dist`.
+This will generate an optimized version of the app in the `dist` directory
 
-## Contribuir
-Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios mayores antes de crear un pull request.
+## Contributing
 
-Link del proyecto: [https://github.com/davidfl214/random-movie-generator](https://github.com/davidfl214/random-movie-generator)
+Contributions are appreciated. Please open an issue for discussing major changes before creating a pull request.
+
+Project link: [https://github.com/davidfl214/random-movie-generator](https://github.com/davidfl214/random-movie-generator)
